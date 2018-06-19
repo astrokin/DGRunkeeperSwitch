@@ -171,7 +171,7 @@ open class DGRunkeeperSwitch: UIControl {
     // MARK: - Destructor
     
     deinit {
-        removeObserver(self, forKeyPath: "selectedBackgroundView.frame")
+        removeObserver(self, forKeyPath: #keyPath(selectedBackgroundView.frame))
     }
     
     // MARK: - Observer
