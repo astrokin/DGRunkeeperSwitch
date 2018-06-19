@@ -97,7 +97,7 @@ open class DGRunkeeperSwitch: UIControl {
     fileprivate var selectedTitleLabelsContentView = UIView()
     fileprivate var selectedTitleLabels = [UILabel]()
     
-    fileprivate(set) var selectedBackgroundView = UIView()
+    @objc fileprivate(set) var selectedBackgroundView = UIView()
     
     fileprivate var titleMaskView: UIView = UIView()
     
@@ -159,7 +159,7 @@ open class DGRunkeeperSwitch: UIControl {
         panGesture.delegate = self
         addGestureRecognizer(panGesture)
         
-        addObserver(self, forKeyPath: "selectedBackgroundView.frame", options: .new, context: nil)
+        addObserver(self, forKeyPath: #keyPath(selectedBackgroundView.frame), options: .new, context: nil)
     }
     
     override open func awakeFromNib() {
